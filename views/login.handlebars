@@ -1,0 +1,26 @@
+<div class="row">
+
+  <div class="col-md-6" id="login-container">
+    <h2 class="login-headers">Login</h2>
+    <form class="form login-form">
+      <div class="form-group" id="login-email">
+        <label for="email-login">Email address:</label>
+        <input type="email" class="form-control" id="email-login" aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+
+      <div class="form-group" id="login-password">
+        <label for="password-login">Password:</label>
+        <input type="password" class="form-control" id="password-login" placeholder="Password">
+      </div>
+      <br>
+      <button type="submit" class="btn btn-outline-light" id="login-btn">Login</button>
+    </form>
+    <br>
+    <div>
+      <span class="new-to-movie-guide-text">New to Movie Guide? </span><a href='/signup' class="new-to-movie-guide-text">Sign Up Now</a>
+    </div>
+  </div>
+</div>
+
+<script src="./js/login.js"></script>
+<script src="https://unpkg.com/validator@latest/validator.min.js"></script>

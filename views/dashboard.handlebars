@@ -1,0 +1,33 @@
+<div class="container text-center">
+  <div class="row">
+    <div class="col-sm-3">
+      <h2 class="site-text">Welcome, {{username}}!</h2>
+      {{#if movies.length}}
+      <p class="site-text">Thank you for adding your movie reviews.
+        You have reviewed the following Movies:</p>
+      <p class="site-text"></p>
+      {{/if}}
+    </div>
+    <div class="col-sm-9">
+      <div class="row">
+        {{#if movies.length}}
+          <h3 class="site-text">Movie Reviews:</h3>
+            {{#each movies as |movie|}}
+              <div class="row give-me-space">
+                <div class="card no-pad">
+                  <div class="card-header">
+                    <h5 class="movie-name">{{movie.movie.name}}</h5>
+                    <h5 class="movie-rating">{{movie.starRating}}</h5>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Review:</h5>
+                    <p class="card-text">{{movie.review}}</p>
+                  </div>
+                </div>
+              </div>
+            {{/each}}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>
