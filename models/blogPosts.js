@@ -1,11 +1,11 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-
 class Posts extends Model {}
 
 Posts.init(
   {
+    // define columns
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -38,7 +38,7 @@ Posts.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'blogPosts',
+    modelName: 'posts',
   }
 );
 
