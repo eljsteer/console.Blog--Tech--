@@ -1,19 +1,19 @@
 [
   {
     "comments_body": "Agreeed very important has helped improve my development",
-    "date_created": "05/08/2022",
+    "date_created": "2022-08-05",
     "user_id": "2",
     "blogPost_id": "1"
   },
   {
     "comments_body": "Agreed very important has helped improve my development",
-    "date_created": "10/06/2022",
+    "date_created": "2022-06-10",
     "user_id": "1",
     "blogPost_id": "2"
   },
   {
     "comments_body": "Second that, ORM has helped organise my code",
-    "date_created": "02/06/2022",
+    "date_created": "2022-06-02",
     "user_id": "3",
     "blogPost_id": "3"
   }
