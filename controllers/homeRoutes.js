@@ -39,7 +39,13 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     // Get all Movies by Rating
     const postData = await Posts.findAll({
-      include: [Comments],
+      include: [
+        {
+          model: User,
+          attributes: { exclude: ['password'] },
+        },
+        Comments
+      ],
       where: {
         user_id: req.session.user_id,
       },
@@ -47,8 +53,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
         ["date_created","DESC"]
       ],
     });
-    
-    console.log(postData);
 
     // Serialize data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));

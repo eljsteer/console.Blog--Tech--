@@ -13,10 +13,6 @@ Posts.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
-Posts.hasOne(User, {
-  foreignKey: 'user_id',
-});
-
 // Comments Relationships
 User.hasMany(Comments, {
   foreignKey: 'user_id'
