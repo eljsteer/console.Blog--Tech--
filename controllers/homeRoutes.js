@@ -10,6 +10,24 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/', async (req, res) => {
+  try {
+    // Get all Movies that have the attribute upcoming or newRelease, also JOIN with user data
+    const postData = await BlogPosts.findAll({
+    });
+
+   // Serialize data so the template can read it
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('homepage', { 
+      posts,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
