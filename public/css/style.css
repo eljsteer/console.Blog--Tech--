@@ -1,4 +1,4 @@
-.nav-link {
+/* .nav-link {
   color: white;
 }
 .nav-item {
@@ -11,7 +11,7 @@
 
 #navbar-toggle {
   margin-right: 20px;
-}
+} */
 
 .hide {
   display: none;
@@ -22,7 +22,7 @@
   flex-direction: column;
   justify-content: center;
 }
-
+/* 
 .site-text {
   color:rgb(177, 177, 177);
 }
@@ -115,5 +115,5 @@ input::placeholder{
 }
 #signup-btn{
   margin-top: 5%;
-}
+} */
 

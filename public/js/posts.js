@@ -1,4 +1,4 @@
-const reviewCreateHandler = async (event) => {
+const blogPostHandler = async (event) => {
 
   // Collect values from the login form
   const movie = document.querySelector('#movie-id').value.trim();
@@ -6,9 +6,9 @@ const reviewCreateHandler = async (event) => {
   const rating = document.querySelector('#rating-value').value.trim();
   const success = document.querySelector('#success')
 
-  if (review && rating && movie) {
+  if (Title && Content) {
     // Send a POST request to the API endpoint
-    const response = await fetch('/api/reviews', {
+    const response = await fetch('/api/blogposts', {
       method: 'POST',
       body: JSON.stringify({ movie, review, rating }),
       headers: { 'Content-Type': 'application/json' },
@@ -16,7 +16,7 @@ const reviewCreateHandler = async (event) => {
     
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      console.log("Review Posted");
+      console.log("console.blog(Posted)");
       success.setAttribute("class", "show site-text");
     } else {
       alert(response.statusText);
@@ -25,5 +25,5 @@ const reviewCreateHandler = async (event) => {
 };
 
 document
-  .querySelector('#add-review')
-  .addEventListener('click', reviewCreateHandler);
+  .querySelector('#add-blogpost')
+  .addEventListener('click', blogPostHandler);
