@@ -43,8 +43,9 @@ router.get('/dashboard', withAuth, async (req, res) => {
         {
           model: User,
           attributes: { exclude: ['password'] },
-        },
-        Comments
+        }, {
+        model: Comments
+        }
       ],
       where: {
         user_id: req.session.user_id,
@@ -53,6 +54,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
         ["date_created","DESC"]
       ],
     });
+
+    console.log(JSON.stringify(postData, null, 2));
 
     // Serialize data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));
