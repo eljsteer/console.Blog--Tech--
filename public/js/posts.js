@@ -1,29 +1,37 @@
 const blogPostHandler = async (event) => {
-
+  try {
   // Collect values from the login form
-  const movie = document.querySelector('#movie-id').value.trim();
-  const review = document.querySelector('#review-descr').value.trim();
-  const rating = document.querySelector('#rating-value').value.trim();
-  const success = document.querySelector('#success')
+  const title = document.querySelector('#post-title').value.trim();
+  const content = document.querySelector('#post-content').value.trim();
+  const success = document.querySelector('#success');
+  const createPost = document.querySelector('.cont-create-post');
 
-  if (Title && Content) {
+  if (title && content) {
     // Send a POST request to the API endpoint
-    const response = await fetch('/api/blogposts', {
+    const response = await fetch('/api/posts', {
       method: 'POST',
-      body: JSON.stringify({ movie, review, rating }),
+      body: JSON.stringify({ title, content }),
       headers: { 'Content-Type': 'application/json' },
     });
     
     if (response.ok) {
       // If successful, redirect the browser to the profile page
       console.log("console.blog(Posted)");
-      success.setAttribute("class", "show site-text");
+      success.classList.add("show");
     } else {
       alert(response.statusText);
     }
   }
+  function hideCreatePost () {
+    createPost.setAttribute("class", "hide");
+  };
+  hideCreatePost()
+
+  } catch (err) {
+  console.log(err)
+  };
 };
 
 document
-  .querySelector('#add-blogpost')
+  .querySelector('#create-post')
   .addEventListener('click', blogPostHandler);
