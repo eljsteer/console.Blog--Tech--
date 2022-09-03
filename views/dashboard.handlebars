@@ -1,34 +1,35 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-3">
-      <h2 class="site-text">Welcome, {{username}}!</h2>
-      {{!-- {{#if posts.length}}
-      <p class="site-text">Thank you for choosing console.Blog(Tech) to Blog.</p>
-      {{/if}} --}}
-      <button class="btn btn-lg btn-outline-info"> + New Post</button>
+      <h2 class="app-heading">Welcome, {{username}}!</h2>
+      <button class="btn btn-lg btn-outline-info" id="new-post-bttn"> + New Post</button>
       <h6 id="success" class="success hide">Post Saved</h6>
     </div>
     <div class="col-sm-9">
-      {{!-- <div class="row">
-        {{#if posts.length}}
-          <h3 class="site-text">Movie Reviews:</h3>
-            {{#each Posts as |post|}}
-              <div class="row give-me-space">
-                <div class="card no-pad">
-                  <div class="card-header">
-                    <h5 class="movie-name">{{movie.movie.name}}</h5> --}}
-                    {{!-- <h5 class="movie-rating">{{movie.starRating}}</h5>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Review:</h5>
-                    <p class="card-text">{{movie.review}}</p>
+      <div class="container" id="post-display">
+        <div class="row">
+          {{#if posts.length}}
+            <h3 class="">Your Blog Posts:</h3>
+              {{#each Posts as |post|}}
+                <div class="row give-me-space">
+                  <div class="card no-pad">
+                    <div class="card-header">
+                      <h5 class="movie-name">{{movie.movie.name}}</h5>
+                      <h5 class="movie-rating">{{movie.starRating}}</h5>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Review:</h5>
+                      <p class="card-text">{{movie.review}}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            {{/each}}
-        {{/if}}
-      </div> --}}
-      <div class="container cont-create-post">
+              {{/each}}
+          {{/if}}
+        </div> 
+      </div>
+
+{{!-- Post Creation Container --}}
+      <div class="container hide" id="create-post">
         <div class="row">
           <div class=" card col-md-12">
             <div class="card-header">Create New Console.Blog(Post)</div>

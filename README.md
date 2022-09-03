@@ -33,6 +33,7 @@
 
   ## CREDITS
   - University of Sydney Coding Bootcamp - Mini Project 
+  - [ ](https://www.javascripttutorial.net/dom/css/replace-a-class-of-an-element/)
 
   ## QUESTIONS
   For any questions on this project please contact me via my Github link or email.<br />
