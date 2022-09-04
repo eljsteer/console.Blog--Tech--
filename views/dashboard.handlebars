@@ -2,31 +2,35 @@
   <div class="row">
     <div class="col-sm-3">
       <h2 class="app-heading">Welcome, {{user.username}}!</h2>
+      <br>
       <button class="btn btn-lg btn-outline-info" id="new-post-bttn"> + New Post</button>
       <h6 id="success" class="success hide">Post Saved</h6>
     </div>
     <div class="col-sm-9">
       <div class="container" id="post-display">
-        <div class="row">
-          {{#if posts.length}}
-            <h3 class="app-heading">Your Blog Posts:</h3>
-              {{#each posts as |post|}}
-                <div class="row give-me-space">
-                  <div class="card no-pad">
-                    <div class="card-header">
+      <div class="row">
+        {{#if posts.length}}
+          <h3 class="site-text">Your Blog Posts:</h3>
+            {{#each posts as |post|}}
+              <div class="row give-me-space">
+                <div class="card no-pad" id="post-id" data-postID="{{add_dataAttr}}">
+                  <a href="#" class="card-header link-black streteched-link">
+                    <div class="row col-8 col-sm-6">
                       <h5 class="post-title">{{post.title}}</h5>
-                      <h5 class="user-name"> - by Author: {{post.user.username}}</h5>
                     </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Comment:</h5>
-                      <p class="card-text"></p>
+                    <div class="col-4 col-sm-6 site-text">
+                      Posted by: {{user.username}} on {{format_date post.date_created}}
                     </div>
+                  </a>
+                  <div class="card-body">
+                    <p class="card-text">{{post.content}}</p>
                   </div>
                 </div>
-              {{/each}}
-          {{/if}}
-        </div> 
+              </div>
+            {{/each}}
+        {{/if}}
       </div>
+    </div>
 
 {{!-- Post Creation Container --}}
       <div class="container hide" id="create-post">

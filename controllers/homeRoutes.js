@@ -7,12 +7,11 @@ router.get('/', async (req, res) => {
   try {
     // Get all Movies that have the attribute upcoming or newRelease, also JOIN with user data
     const postData = await Posts.findAll({
-      include: [User, Comments],
+      include: [User],
     });
 
    // Serialize data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));
-    console.log(posts);
     // Pass serialized data and session flag into template
     res.status(200).render('homepage', { 
       posts,

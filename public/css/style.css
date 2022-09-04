@@ -31,6 +31,10 @@
 padding: 0;
 }
 
+.site-text {
+text-decoration: none;
+}
+
 /* #logo-1{
   max-width: 400px;
   max-height: 400px;

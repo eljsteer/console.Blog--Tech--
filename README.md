@@ -34,6 +34,7 @@
   ## CREDITS
   - University of Sydney Coding Bootcamp - Mini Project 
   - [ ](https://www.javascripttutorial.net/dom/css/replace-a-class-of-an-element/)
+  - [ ](https://www.freecodecamp.org/news/how-to-format-dates-in-javascript/)
 
   ## QUESTIONS
   For any questions on this project please contact me via my Github link or email.<br />
