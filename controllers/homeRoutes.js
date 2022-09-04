@@ -30,54 +30,40 @@ router.get('/dashboard', withAuth, async (req, res) => {
     });
     const user = userData.get({ plain: true });
 
-    // Get all Movies by Rating
-    const commentData = await Comments.findAll({
-      include: [
-        {
-          model: User,
-          attributes: { exclude: ['password'] },
-        }, {
-        model: Posts,
-        }
-      ],
-      where: {
-        user_id: req.session.user_id,
-      },
-      order: [
-        ["date_created","DESC"]
-      ],
-    });
-
     const postData = await Posts.findAll({
-      include: [
-        {
-          model: User,
-          attributes: { exclude: ['password'] },
-        }, {
+      include: [{
         model: Comments,
-        }
-      ],
+      }],
       where: {
         user_id: req.session.user_id,
-      },
-      order: [
-        ["date_created","DESC"]
-      ],
-    });
+      }}). then (dbPostData => {
 
-    // Serialize data so the template can read it
-    const posts = postData.map((post) => post.get({ plain: true }));
+  // Serialize data so the template can read it
+    const posts = dbPostData.map((post) => post.get({ plain: true }));
     console.log(posts);
-    console.log("***********");
-    const postComments = commentData.map((comment) => comment.get({ plain: true }));
-    console.log(postComments);
-
-    // Serialize data so the template can read it
+    
+  // display data to Dashboard
     res.render('dashboard', {
       user,
-      postComments,
+      posts,
       logged_in: req.session.logged_in
     });
+
+      })
+
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: { exclude: ['password'] },
+      //   }, {
+      //   model: Comments,
+      //   }
+      // ],
+
+    //   order: [
+    //     ["date_created","DESC"]
+    //   ],
+    // });
 
   } catch (err) {
     console.log(err)

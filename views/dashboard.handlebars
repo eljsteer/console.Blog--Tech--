@@ -8,14 +8,14 @@
     <div class="col-sm-9">
       <div class="container" id="post-display">
         <div class="row">
-          {{#if postComments.length}}
+          {{#if posts.length}}
             <h3 class="app-heading">Your Blog Posts:</h3>
-              {{#each postComments as |post|}}
+              {{#each posts as |post|}}
                 <div class="row give-me-space">
                   <div class="card no-pad">
                     <div class="card-header">
-                      <h5 class="post-title">Hello{{post.post.title}}</h5>
-                      <h5 class="user-name">`- by Author: {{post.user.username}}</h5>
+                      <h5 class="post-title">{{post.post.title}}</h5>
+                      <h5 class="user-name"> - by Author: {{post.user.username}}</h5>
                     </div>
                     <div class="card-body">
                       <h5 class="card-title">Comment:</h5>
