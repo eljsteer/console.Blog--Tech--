@@ -24,11 +24,11 @@ Comments.belongsTo(User, {
 
 // Posts belongToMany Comments (through BlogPostComments)
 Posts.hasMany(Comments, {
-  foreignKey: "blogPost_id"
+  foreignKey: "post_id"
 });
 
 Comments.belongsTo(Posts, {
-  foreignKey: "blogPost_id"
+  foreignKey: "post_id"
 });
 
 module.exports = {

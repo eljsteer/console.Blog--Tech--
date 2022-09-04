@@ -37,6 +37,30 @@ router.get('/dashboard', withAuth, async (req, res) => {
     });
     const user = userData.get({ plain: true });
 
+
+
+    // Get all Movies by Rating
+    const commentData = await Comments.findAll({
+      include: [
+        {
+          model: User,
+          attributes: { exclude: ['password'] },
+        }, {
+        model: Posts,
+        }
+      ],
+      where: {
+        user_id: req.session.user_id,
+      },
+      order: [
+        ["date_created","DESC"]
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const comments = commentData.map((post) => post.get({ plain: true }));
+    console.log(comments);
+
     // Get all Movies by Rating
     const postData = await Posts.findAll({
       include: [
@@ -54,8 +78,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
         ["date_created","DESC"]
       ],
     });
-
-    console.log(JSON.stringify(postData, null, 2));
 
     // Serialize data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));
