@@ -1,22 +1,31 @@
-      <div class="row">
-        {{#if posts.length}}
-          <h3 class="site-text">Your Blog Posts:</h3>
-            {{#each posts as |post|}}
-              <div class="row give-me-space">
-                <div class="card no-pad" id="post-id" data-postID="{{add_dataAttr}}">
-                  <a href="#" class="card-header link-black streteched-link">
-                    <div class="row col-8 col-sm-6">
-                      <h5 class="post-title">{{post.title}}</h5>
+      <div class="container">
+        <div class="row">
+          {{#if posts.length}}
+            <h3 class="site-text">Your Blog Posts:</h3>
+              {{#each posts as |post|}}
+                <div class="container give-me-space">
+                  <div class="card no-pad" id="post-id" data-postID="{{add_dataAttr}}">
+                    <a href="/api/comments" class="card-header link-black streteched-link">
+                      <div class="row col-8 col-sm-6">
+                        <h5 class="post-title">{{post.title}}</h5>
+                      </div>
+                      <div class="col-4 col-sm-6 site-text">
+                        Posted by: {{user.username}} on {{format_date post.date_created}}
+                      </div>
+                    </a>
+                    <div class="card-body">
+                      <p class="card-text">{{post.content}}</p>
                     </div>
-                    <div class="col-4 col-sm-6 site-text">
-                      Posted by: {{user.username}} on {{format_date post.date_created}}
-                    </div>
-                  </a>
-                  <div class="card-body">
-                    <p class="card-text">{{post.content}}</p>
+                      <div class="hide">
+                        <button type="button" class="btn btn-outline-dark px-5 mx-2" id="update-bttn">Update</button>
+                        <button type="button" class="btn btn-outline-dark px-5 mx-2" id="update-bttn">Delete</button>
+                      </div>
+                  </div>
+                  <div class="hide" id="add-comment">
+                    {{> new-comment}}
                   </div>
                 </div>
-              </div>
-            {{/each}}
-        {{/if}}
+              {{/each}}
+          {{/if}}
+        </div>
       </div>

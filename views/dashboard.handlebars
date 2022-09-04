@@ -8,7 +8,7 @@
     </div>
     <div class="col-sm-9">
       <div class="container" id="post-display">
-      <div class="row">
+        <div class="row">
         {{#if posts.length}}
           <h3 class="site-text">Your Blog Posts:</h3>
             {{#each posts as |post|}}
@@ -25,6 +25,10 @@
                   <div class="card-body">
                     <p class="card-text">{{post.content}}</p>
                   </div>
+                  <div class="hide">
+                    <button type="button" class="btn btn-outline-dark px-5 mx-2" id="update-bttn">Update</button>
+                    <button type="button" class="btn btn-outline-dark px-5 mx-2" id="update-bttn">Delete</button>
+                  </div>
                 </div>
               </div>
             {{/each}}
@@ -35,14 +39,14 @@
 {{!-- Post Creation Container --}}
       <div class="container hide" id="create-post">
         <div class="row">
-          <div class=" card col-md-12">
-            <div class="card-header">Create New Console.Blog(Post)</div>
-            <div class="mb-3">
-              <label for="post-title" class="form-label Post-headings">Title</label>
+          <div class=" card no-pad col-md-12">
+            <div class="card-header p-4 site-heading">Create New Console.Blog(Post)</div>
+            <div class="m-3">
+              <label for="post-title" class="form-label site-heading">Title</label>
               <input type="text" class="form-control" id="post-title" placeholder="Enter Post Title" aria-label="Post Title">
             </div>
-            <div class="mb-3">
-              <label for="post-content" class="form-label Post-headings">Content</label>
+            <div class="m-3">
+              <label for="post-content" class="form-label site-heading">Content</label>
               <textarea class="form-control" id="post-content" placeholder="Enter Post Content Here..." rows="3"></textarea>
             </div>
             <br>
