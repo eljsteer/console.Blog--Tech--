@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-3">
-      <h2 class="app-heading">Welcome, {{username}}!</h2>
+      <h2 class="app-heading">Welcome, {{user.username}}!</h2>
       <button class="btn btn-lg btn-outline-info" id="new-post-bttn"> + New Post</button>
       <h6 id="success" class="success hide">Post Saved</h6>
     </div>
@@ -14,12 +14,12 @@
                 <div class="row give-me-space">
                   <div class="card no-pad">
                     <div class="card-header">
-                      <h5 class="post-title">{{post.post.title}}</h5>
+                      <h5 class="post-title">{{post.title}}</h5>
                       <h5 class="user-name"> - by Author: {{post.user.username}}</h5>
                     </div>
                     <div class="card-body">
                       <h5 class="card-title">Comment:</h5>
-                      <p class="card-text">{{post.comment_body}}</p>
+                      <p class="card-text"></p>
                     </div>
                   </div>
                 </div>

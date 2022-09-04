@@ -31,39 +31,29 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
 
     const postData = await Posts.findAll({
-      include: [{
-        model: Comments,
-      }],
+      include: [
+        {
+          model: User,
+          attributes: { exlude: ['password'] },
+        },
+      ],
       where: {
         user_id: req.session.user_id,
-      }}). then (dbPostData => {
-
-  // Serialize data so the template can read it
-    const posts = dbPostData.map((post) => post.get({ plain: true }));
-    console.log(posts);
+      },
+      order: [
+        ["date_created","DESC"]
+      ],
+    });
     
+  // Serialize data so the template can read it
+    const posts = postData.map((post) => post.get({ plain: true }));
+    console.log(posts)
   // display data to Dashboard
-    res.render('dashboard', {
+    res.status(200).render('dashboard', {
       user,
       posts,
       logged_in: req.session.logged_in
     });
-
-      })
-
-      // include: [
-      //   {
-      //     model: User,
-      //     attributes: { exclude: ['password'] },
-      //   }, {
-      //   model: Comments,
-      //   }
-      // ],
-
-    //   order: [
-    //     ["date_created","DESC"]
-    //   ],
-    // });
 
   } catch (err) {
     console.log(err)
