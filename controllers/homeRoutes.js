@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
     console.log(posts);
     // Pass serialized data and session flag into template
     res.status(200).render('homepage', { 
-      ...posts,
+      posts,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -74,8 +74,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     // Serialize data so the template can read it
     res.render('dashboard', {
-      ...user,
-      ...postComments,
+      user,
+      postComments,
       logged_in: req.session.logged_in
     });
 
