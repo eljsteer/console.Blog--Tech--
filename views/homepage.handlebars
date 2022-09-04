@@ -1,16 +1,16 @@
       <div class="row">
         {{#if posts.length}}
-          <h3 class="site-text">Movie Reviews:</h3>
-            {{#each Posts as |post|}}
+          <h3 class="site-text">Blog Posts:</h3>
+            {{#each posts as |post|}}
               <div class="row give-me-space">
                 <div class="card no-pad">
                   <div class="card-header">
-                    {{!-- <h5 class="movie-name">{{movie.movie.name}}</h5> --}}
-                    {{!-- <h5 class="movie-rating">{{movie.starRating}}</h5> --}}
+                    <h5 class="movie-name">{{post.movie.name}}</h5>
+                    <h5 class="movie-rating">{{movie.starRating}}</h5>
                   </div>
                   <div class="card-body">
                     <h5 class="card-title">Review:</h5>
-                    {{!-- <p class="card-text">{{movie.review}}</p> --}}
+                    <p class="card-text">{{movie.review}}</p>
                   </div>
                 </div>
               </div>

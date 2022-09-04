@@ -6,7 +6,7 @@
     "post_id": "1"
   },
   {
-    "comment_body": "Agreed very important has helped improve my development",
+    "comment_body": "All over the differences. But good to know there is a difference in order to implement the different use cases",
     "date_created": "2022-06-10",
     "user_id": "1",
     "post_id": "2"
@@ -16,5 +16,17 @@
     "date_created": "2022-06-02",
     "user_id": "3",
     "post_id": "3"
+  },
+  {
+    "comment_body": "Second that, Javscript has been a great coding language to start off with learning.",
+    "date_created": "2022-06-08",
+    "user_id": "3",
+    "post_id": "4"
+  },
+  {
+    "comment_body": "Javscript is such a great coding language I still use it.",
+    "date_created": "2022-06-08",
+    "user_id": "3",
+    "post_id": "4"
   }
 ]

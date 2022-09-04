@@ -2,32 +2,25 @@ const router = require('express').Router();
 const { User, Posts ,Comments } = require('../models');
 const withAuth = require('../utils/auth');
 
+// <<--HomePage Routes-->>
 router.get('/', async (req, res) => {
   try {
-    res.status(200).render('homepage');
+    // Get all Movies that have the attribute upcoming or newRelease, also JOIN with user data
+    const postData = await Posts.findAll({
+      include: [User, Comments],
+    });
+
+   // Serialize data so the template can read it
+    const posts = postData.map((post) => post.get({ plain: true }));
+    console.log(posts);
+    // Pass serialized data and session flag into template
+    res.status(200).render('homepage', { 
+      ...posts,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
-// <<--HomePage Routes-->>
-// router.get('/', async (req, res) => {
-//   try {
-//     // Get all Movies that have the attribute upcoming or newRelease, also JOIN with user data
-//     const postData = await Posts.findAll({
-//     });
-
-//    // Serialize data so the template can read it
-//     const posts = postData.map((post) => post.get({ plain: true }));
-
-//     // Pass serialized data and session flag into template
-//     res.render('homepage', { 
-//       posts,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 // <<--Dashboard Routes-->>
 router.get('/dashboard', withAuth, async (req, res) => {
@@ -36,8 +29,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
     });
     const user = userData.get({ plain: true });
-
-
 
     // Get all Movies by Rating
     const commentData = await Comments.findAll({
@@ -57,18 +48,13 @@ router.get('/dashboard', withAuth, async (req, res) => {
       ],
     });
 
-    // Serialize data so the template can read it
-    const comments = commentData.map((post) => post.get({ plain: true }));
-    console.log(comments);
-
-    // Get all Movies by Rating
     const postData = await Posts.findAll({
       include: [
         {
           model: User,
           attributes: { exclude: ['password'] },
         }, {
-        model: Comments
+        model: Comments,
         }
       ],
       where: {
@@ -81,21 +67,23 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     // Serialize data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));
-    
+    console.log(posts);
+    console.log("***********");
+    const postComments = commentData.map((comment) => comment.get({ plain: true }));
+    console.log(postComments);
+
+    // Serialize data so the template can read it
     res.render('dashboard', {
       ...user,
-      ...posts,
+      ...postComments,
       logged_in: req.session.logged_in
     });
-
-    console.log(posts);
 
   } catch (err) {
     console.log(err)
     res.status(500).json(err);
   }
 });
-
 
 // redirect to SignUp route if user navigates to signup
 router.get('/signup', (req, res) => {

@@ -16,5 +16,11 @@
     "content": "I have really loved learning about ORMs. It's really simplified the way i create queries in SQL",
     "user_id": 3,
     "date_created": "2022-05-20"
+  },
+  {
+    "title": "Javscript is Fun",
+    "content": "Its been such an enjoyabe journey learning Javascript.",
+    "user_id": 3,
+    "date_created": "2022-05-22"
   }
 ]

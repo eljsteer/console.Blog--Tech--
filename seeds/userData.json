@@ -1,18 +1,18 @@
 [
   {
-    "email": "johndoe@gmail.com",
-    "name": "John Doe",
-    "username": "johnnyDeer",
-    "password": "password12345"
-}, {
     "email": "janesmit@hotmail.com",
     "name": "Jane Smit",
     "username": "janeSlickSmit",
     "password": "password12345"
-}, {
+  }, {
     "email": "jasonsteer@hotmail.com",
     "name": "Jason Steer",
     "username": "jjSmoothy",
     "password": "password12345"
-}
+  }, {
+    "email": "johndoe@gmail.com",
+    "name": "John Doe",
+    "username": "johnnyDeer",
+    "password": "password12345"
+  }
 ]
