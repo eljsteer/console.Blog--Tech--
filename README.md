@@ -23,9 +23,6 @@
 
   ## Tests
   * To test the routes, [Download and install Insomnia](https://insomnia.rest/download)
-  * Setup test routes as per the walkthrough video
-
-  #### [Usage Walkthrough Video](https://drive.google.com/file/d/1Ce5Pyjkc2HSfKkjFJT2H2eLrBZyUbIKc/view)
   
   ## LICENSE
   Project developed 2022 by Jason Steer,<br />
@@ -33,8 +30,16 @@
 
   ## CREDITS
   - University of Sydney Coding Bootcamp - Mini Project 
-  - [ ](https://www.javascripttutorial.net/dom/css/replace-a-class-of-an-element/)
-  - [ ](https://www.freecodecamp.org/news/how-to-format-dates-in-javascript/)
+  - [JavascriptTutorial](https://www.javascripttutorial.net/dom/css/replace-a-class-of-an-element/)
+  - [FreeCodeCamp](https://www.freecodecamp.org/news/how-to-format-dates-in-javascript/)
+
+  ## Future Development & Known Issues
+  - Application is a work in process and so currently have the following features to implement when I have additional time:
+    * Add comments to any blog post
+    * Edit/update Blogposts
+    * Delete a blogpost you have created.
+    * Display comments on a post upon click.
+    <br />
 
   ## QUESTIONS
   For any questions on this project please contact me via my Github link or email.<br />
