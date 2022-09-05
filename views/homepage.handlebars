@@ -4,8 +4,8 @@
             <h3 class="site-text">Your Blog Posts:</h3>
               {{#each posts as |post|}}
                 <div class="container give-me-space">
-                  <div class="card no-pad" id="post-id" data-postID="{{add_dataAttr}}">
-                    <a href="/api/comments" class="card-header link-black streteched-link">
+                  <div class="card no-pad" id="post-id" data-postID="{{post.id}}">
+                    <a href="/comments" class="card-header link-black streteched-link">
                       <div class="row col-8 col-sm-6">
                         <h5 class="post-title">{{post.title}}</h5>
                       </div>

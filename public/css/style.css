@@ -1,18 +1,3 @@
-/* .nav-link {
-  color: white;
-}
-.nav-item {
-  padding-right: 50px;
-}
-
-.navbar-toggler {
-  background-color: rgb(177, 177, 177);;
-}
-
-#navbar-toggle {
-  margin-right: 20px;
-} */
-
 .hide {
   display: none;
 }
@@ -41,74 +26,6 @@ padding: 0;
   text-align: center;
 }
 
-/* #logo-1{
-  max-width: 400px;
-  max-height: 400px;
+.nav-link {
+  font-size: 1.3rem;
 }
-input::placeholder{
-  font-style: italic;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
-
-/* }
-.body{
-  background-color: black;
-}
-.login-headers{
-  color: white;
-  padding-top: 10%;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 250%;
-}
-#login-container{
-  margin: auto;
-}
-#login-email{
-  color: white;
-  padding-top: 10%;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-}
-#login-password{
-  color: white;
-  padding-top: 10%;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-}
-#login-btn{
-  margin-top: 5%;
-}
-.new-to-movie-guide-text{
-  color: grey;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-#signup-container{
-  margin: auto;
-}
-.signup-headers{
-  color: white;
-  padding-top: 10%;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 250%;
-}
-#sign-up-name{
-  color: white;
-  padding-top: 10%;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-#sign-up-email{
-  color: white;
-  padding-top: 10%;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-#sign-up-password{
-  color: white;
-  padding-top: 10%;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-#sign-up-username{
-  color: white;
-  padding-top: 10%;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-#signup-btn{
-  margin-top: 5%;
-} */
-

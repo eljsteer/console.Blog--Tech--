@@ -38,7 +38,8 @@ const blogPostHandler = async (event) => {
       // If successful, redirect the browser to the profile page
       console.log("console.blog(Posted)");
       success.classList.add("show");
-      hideCreatePost()
+      hideCreatePost();
+      location.reload();
     } else {
       alert(response.statusText);
     }
@@ -57,3 +58,18 @@ const blogPostHandler = async (event) => {
 document
   .querySelector('#create-post')
   .addEventListener('click', blogPostHandler);
+
+
+const updateDelPost = async (event) => {
+  try {
+    const optButtons = document.querySelector('#footer')
+
+    optButtons.setAttribute("class", "card-footer d-flex justify-content-center")
+  } catch (err) {
+    console.log(err)
+    };
+};
+
+document
+  .querySelector('#update-del-post')
+  .addEventListener('click', updateDelPost);
