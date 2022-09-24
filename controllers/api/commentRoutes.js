@@ -22,9 +22,15 @@ router.get('/:id', async (req, res) => {
     const commentbyID = await Comments.findAll({
       where: { id: req.params.id }
     });
-    const commentData = await commentbyID(commentData => res.json(commentData));
 
-    return commentData;
+    if (!commentbyID) {
+      res.status(404).json({ message: 'No comment found with this id' });
+      return;
+    }
+    
+    const commentData = commentbyID.map((comments) => comments.get({ plain: true }));
+
+    res.status(200).json(commentData);
 
   } catch (err) {
     res.status(400||500).json(err);
@@ -70,14 +76,13 @@ router.delete('/:id', withAuth, async (req, res) => {
       where: {
         id: req.params.id
       }
-    })
-    .then(commentData => {
-      if (!commentData) {
+    });
+      if (!deleteComment) {
           res.status(404).json({ message: 'No comment found with this id' });
           return;
       }
-    })
-    res.status(200).json(commentData);
+
+    res.status(200).json(deleteComment);
   } catch (err) {
     res.status(400||500).json(err);
   }
