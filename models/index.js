@@ -1,21 +1,22 @@
 // import models
-const User = require('./user');
-const Posts = require('./posts');
-const Comments = require('./comments');
+const User = require("./user");
+const Posts = require("./posts");
+const Comments = require("./comments");
 
 // <-- Posts Relationships -->
 User.hasMany(Posts, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE',
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
 });
 
 Posts.belongsTo(User, {
-  foreignKey: 'user_id',
+  foreignKey: "user_id",
 });
 
 // Comments Relationships
 User.hasMany(Comments, {
-  foreignKey: 'user_id'
+  foreignKey: "user_id",
+  onDelete: "cascade"
 });
 
 Comments.belongsTo(User, {
@@ -24,7 +25,8 @@ Comments.belongsTo(User, {
 
 // Posts belongToMany Comments (through BlogPostComments)
 Posts.hasMany(Comments, {
-  foreignKey: "post_id"
+  foreignKey: "post_id",
+  onDelete: "cascade"
 });
 
 Comments.belongsTo(Posts, {

@@ -42,4 +42,9 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+// redirecting users to Dashboard once they sign up
+router.get('/new', (req, res) => {
+  res.render('new-post');
+});
+
 module.exports = router
