@@ -27,7 +27,7 @@ router.get('/:id', async (req, res) => {
       res.status(404).json({ message: 'No comment found with this id' });
       return;
     }
-    
+
     const commentData = commentbyID.map((comments) => comments.get({ plain: true }));
 
     res.status(200).json(commentData);
@@ -60,7 +60,13 @@ router.put('/:id', withAuth, async (req, res) => {
       where: {
         id: req.params.id
       }
-    })
+    });
+
+    if (!updateComment) {
+      res.status(404).json({ message: 'No comment found with this id' });
+      return;
+    }
+
     res.status(200).json(updateComment);
   } catch (err) {
     res.status(400||500).json(err);
